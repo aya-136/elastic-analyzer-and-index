@@ -20,9 +20,14 @@ public class Main {
                 .addTokenFilter(TokenFilterType.LOWERCASE)
                 .build();
 
-        InvertedIndexCollection idx = new TimedInvertedIndexCollection(analyzer);
-        idx.addDocument("doc1", "Hello world");
-        idx.addDocument("doc2", "Hello there");
-        System.out.println(idx.search("hello world"));
+        Index index = new InvertedIndexCollection(analyzer);
+
+        index = new TimedInvertedIndexCollection(index);
+
+        index.addDocument("doc1", "hello world");
+        index.addDocument("doc2", "hello guys");
+
+        index.search("hello");
     }
+
 }
