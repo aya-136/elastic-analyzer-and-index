@@ -4,7 +4,7 @@ import org.example.analyzer.Analyzer;
 import org.example.analyzer.Token;
 import java.util.*;
 
-public class InvertedIndexCollection {
+public class InvertedIndexCollection implements Index{
     private final Analyzer analyzer;
 
     // term -> set of docIds containing that term
@@ -81,3 +81,4 @@ public class InvertedIndexCollection {
         return results;
     }
 }
+
